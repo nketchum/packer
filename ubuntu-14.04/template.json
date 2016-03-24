@@ -30,10 +30,10 @@
       "type": "vagrant",
       "override": {
         "virtualbox": {
-          "output": "ubuntu-14-04-x64-virtualbox.box"
+          "output": "../../Boxes/ubuntu-14-04-x64-virtualbox.box"
         },
         "vmware": {
-          "output": "ubuntu-14-04-x64-vmware.box"
+          "output": "../../Boxes/ubuntu-14-04-x64-vmware.box"
         }
       }
     }
@@ -65,19 +65,19 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 16384,
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
       "iso_checksum": "9e5fecc94b3925bededed0fdca1bd417",
       "iso_checksum_type": "md5",
-      "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso",
+      "iso_url": "../../Bases/ubuntu-14.04.3-server-amd64.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'shutdown -P now' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "vboxmanage": [
-        [ "modifyvm", "{{.Name}}", "--memory", "512" ],
+        [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
       ]
     },
@@ -107,21 +107,21 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 16384,
       "guest_os_type": "linux",
       "http_directory": "http",
       "iso_checksum": "9e5fecc94b3925bededed0fdca1bd417",
       "iso_checksum_type": "md5",
-      "iso_url": "http://releases.ubuntu.com/14.04/ubuntu-14.04.3-server-amd64.iso",
+      "iso_url": "../../Bases/ubuntu-14.04.3-server-amd64.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'shutdown -P now' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
       "vmx_data": {
-        "memsize": "512",
+        "memsize": "2048",
         "numvcpus": "1",
-        "cpuid.coresPerSocket": "1"
+        "cpuid.coresPerSocket": "4"
       }
     }
   ]
